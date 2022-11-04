@@ -1,20 +1,23 @@
 import 'package:flutter/material.dart';
 
-class Home extends StatefulWidget {
-  const Home({super.key});
+class IndexPage extends StatefulWidget {
+  const IndexPage({super.key});
 
   @override
-  State<Home> createState() => HomeState();
+  State<IndexPage> createState() => IndexPageState();
 }
 
-class HomeState extends State<Home> {
-  int _selectedIndex = 0;
+class IndexPageState extends State<IndexPage> {
+  int _currentIndex = 0;
 
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-      print(_selectedIndex);
-    });
+  void _changePage(int index) {
+    if (index != _currentIndex) {
+      setState(() {
+        _currentIndex = index;
+
+        print(_currentIndex);
+      });
+    }
   }
 
   @override
@@ -73,11 +76,8 @@ class HomeState extends State<Home> {
               tooltip: "",
             ),
           ],
-          currentIndex: _selectedIndex,
-          onTap: _onItemTapped,
-        ),
-        body: const Center(
-          child: Text("0"),
+          currentIndex: _currentIndex,
+          onTap: _changePage,
         ),
       ),
       theme: ThemeData(
@@ -102,6 +102,8 @@ class HomeState extends State<Home> {
           type: BottomNavigationBarType.fixed,
           selectedItemColor: Colors.deepPurple[300],
           unselectedItemColor: Colors.grey,
+          selectedLabelStyle: TextStyle(fontSize: 16),
+          unselectedLabelStyle: TextStyle(fontSize: 12),
         ),
       ),
     );
