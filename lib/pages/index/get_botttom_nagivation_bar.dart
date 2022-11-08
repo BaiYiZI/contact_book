@@ -12,7 +12,6 @@ getBottomNavigationBar(currentPageIndex, changePage) {
         icon: Icon(Icons.settings_outlined),
         label: "setting",
         tooltip: "",
-        
       ),
     ],
     currentIndex: currentPageIndex,

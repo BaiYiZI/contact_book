@@ -21,6 +21,5 @@ getDrawer() {
         const ListTile(title: Text("Data Item")),
       ],
     ),
-    
   );
 }
