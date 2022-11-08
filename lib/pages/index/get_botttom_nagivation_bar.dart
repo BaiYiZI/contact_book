@@ -1,6 +1,6 @@
 import "package:flutter/material.dart";
 
-getBottomNavigationBar(currentIndex, changePage) {
+getBottomNavigationBar(currentPageIndex, changePage) {
   return BottomNavigationBar(
     items: const [
       BottomNavigationBarItem(
@@ -12,9 +12,10 @@ getBottomNavigationBar(currentIndex, changePage) {
         icon: Icon(Icons.settings_outlined),
         label: "setting",
         tooltip: "",
+        
       ),
     ],
-    currentIndex: currentIndex,
+    currentIndex: currentPageIndex,
     onTap: changePage,
   );
 }

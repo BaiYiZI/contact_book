@@ -14,7 +14,7 @@ getTheme() {
       selectedIconTheme: IconThemeData(
         color: Colors.deepPurple[300],
         size: 28,
-        shadows: <Shadow>[Shadow(blurRadius: 10)],
+        shadows: const <Shadow>[Shadow(blurRadius: 10)],
       ),
       unselectedIconTheme: const IconThemeData(
         color: Colors.grey,
@@ -23,8 +23,16 @@ getTheme() {
       type: BottomNavigationBarType.fixed,
       selectedItemColor: Colors.deepPurple[300],
       unselectedItemColor: Colors.grey,
-      selectedLabelStyle: TextStyle(fontSize: 16),
-      unselectedLabelStyle: TextStyle(fontSize: 12),
+      selectedLabelStyle: const TextStyle(fontSize: 16),
+      unselectedLabelStyle: const TextStyle(fontSize: 12),
+    ),
+    tabBarTheme: const TabBarTheme(
+      indicator: UnderlineTabIndicator(
+        borderSide: BorderSide(
+          color: Color.fromRGBO(179, 157, 219, 1),
+          width: 4,
+        ),
+      ),
     ),
   );
 }

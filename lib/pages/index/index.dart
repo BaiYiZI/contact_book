@@ -1,11 +1,9 @@
+import 'package:contact_book/pages/show/show.dart';
 import 'package:flutter/material.dart';
 
-import 'package:contact_book/pages/index/get_index_app_bar.dart';
-import 'package:contact_book/pages/index/get_index_drawer.dart';
-import 'package:contact_book/pages/index/get_index_botttom_nagivation_bar.dart';
+import "package:contact_book/pages/home/index.dart";
 import 'package:contact_book/pages/index/get_theme.dart';
-
-import 'package:contact_book/pages/show/show.dart';
+import 'package:contact_book/pages/index/get_botttom_nagivation_bar.dart';
 
 class IndexPage extends StatefulWidget {
   const IndexPage({super.key});
@@ -15,16 +13,16 @@ class IndexPage extends StatefulWidget {
 }
 
 class IndexPageState extends State<IndexPage> {
-  int _currentIndex = 0;
-  int _info = 0;
+  int _currentPageIndex = 0;
+
+  List _pages = [HomePage(), Show()];
 
   void _changePage(int index) {
-    if (index != _currentIndex) {
+    if (index != _currentPageIndex) {
       setState(() {
-        _currentIndex = index;
-        _info = index;
+        _currentPageIndex = index;
 
-        print(_currentIndex);
+        print(_currentPageIndex);
       });
     }
   }
@@ -33,13 +31,11 @@ class IndexPageState extends State<IndexPage> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        body: Show(info: "$_info"),
-        appBar: getIndexAppBar(),
-        drawer: getIndexDrawer(),
-        bottomNavigationBar: getBottomNavigationBar(_currentIndex, _changePage),
+        body: _pages[_currentPageIndex],
+        bottomNavigationBar:
+            getBottomNavigationBar(_currentPageIndex, _changePage),
       ),
       theme: getTheme(),
-      
     );
   }
 }

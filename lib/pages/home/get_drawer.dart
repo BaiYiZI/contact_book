@@ -1,6 +1,6 @@
 import "package:flutter/material.dart";
 
-getIndexDrawer() {
+getDrawer() {
   return Drawer(
     child: Column(
       children: [
@@ -14,11 +14,11 @@ getIndexDrawer() {
           ],
         ),
         const SizedBox(height: 16),
-        const ListTile(title: Text("option")),
-        const ListTile(title: Text("option")),
-        const ListTile(title: Text("option")),
-        const ListTile(title: Text("option")),
-        const ListTile(title: Text("option")),
+        const ListTile(title: Text("Data Item")),
+        const ListTile(title: Text("Data Item")),
+        const ListTile(title: Text("Data Item")),
+        const ListTile(title: Text("Data Item")),
+        const ListTile(title: Text("Data Item")),
       ],
     ),
     
