@@ -1,9 +1,9 @@
-import 'package:contact_book/pages/show/show.dart';
-import 'package:flutter/material.dart';
+import "package:contact_book/pages/show/show.dart";
+import "package:flutter/material.dart";
 
 import "package:contact_book/pages/home/index.dart";
-import 'package:contact_book/pages/index/get_theme.dart';
-import 'package:contact_book/pages/index/get_botttom_nagivation_bar.dart';
+import "package:contact_book/pages/index/get_theme.dart";
+import "package:contact_book/pages/index/get_botttom_nagivation_bar.dart";
 
 class IndexPage extends StatefulWidget {
   const IndexPage({super.key});
