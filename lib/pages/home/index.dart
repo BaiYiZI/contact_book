@@ -18,13 +18,13 @@ class _HomePageState extends State<HomePage>
 
   late TabController _tabController;
 
-  List<String> tabs = ["联系人", "通话记录"];
-  late var pages = const [Show(), Show()];
+  List<String> _tabs = ["联系人", "通话记录"];
+  late var _pages = const [Show(), Show()];
 
   @override
   void initState() {
     super.initState();
-    _tabController = TabController(length: tabs.length, vsync: this);
+    _tabController = TabController(length: _tabs.length, vsync: this);
   }
 
   @override
@@ -48,11 +48,11 @@ class _HomePageState extends State<HomePage>
     return Scaffold(
       body: TabBarView(
         controller: _tabController,
-        children: pages,
+        children: _pages,
       ),
       appBar: getAppBar(
         _tabController,
-        tabs.map((e) => Tab(text: e)).toList(),
+        _tabs.map((e) => Tab(text: e)).toList(),
       ),
       drawer: getDrawer(),
     );
