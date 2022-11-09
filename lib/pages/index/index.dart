@@ -1,6 +1,7 @@
 import "package:flutter/material.dart";
+import "package:contact_book/show.dart";
 
-import "package:contact_book/pages/show/show.dart";
+import "package:contact_book/pages/settings/index.dart";
 import "package:contact_book/pages/home/index.dart";
 
 import "./get_theme.dart";

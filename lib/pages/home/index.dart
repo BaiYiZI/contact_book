@@ -1,6 +1,9 @@
 import "package:flutter/material.dart";
 
-import "package:contact_book/pages/show/show.dart";
+import "package:contact_book/show.dart";
+
+import "./contact_peoples/index.dart";
+import "./call_records/index.dart";
 
 import "./get_app_bar.dart";
 import "./get_drawer.dart";
