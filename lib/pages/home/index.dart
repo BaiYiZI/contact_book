@@ -56,6 +56,7 @@ class _HomePageState extends State<HomePage>
       appBar: getAppBar(
         _tabController,
         _tabs.map((e) => Tab(text: e)).toList(),
+        context,
       ),
       drawer: getDrawer(),
     );
