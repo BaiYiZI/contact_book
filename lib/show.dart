@@ -13,12 +13,6 @@ class _ShowState extends State<Show> with AutomaticKeepAliveClientMixin {
   @override
   bool get wantKeepAlive => true;
 
-  // @override
-  // void initState() {
-  //   super.initState();
-  //   print('recommend initState');
-  // }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
