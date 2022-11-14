@@ -2,8 +2,8 @@ import "package:flutter/material.dart";
 
 import "package:contact_book/show.dart";
 
-import "./contact_peoples/index.dart";
-import "./call_records/index.dart";
+// import "./contact_peoples/index.dart";
+// import "./call_records/index.dart";
 
 import "./get_app_bar.dart";
 import "./get_drawer.dart";
@@ -22,7 +22,7 @@ class _HomePageState extends State<HomePage>
   late TabController _tabController;
 
   List<String> _tabs = ["联系人", "通话记录"];
-  late var _pages = const [Show(), Show()];
+  late var _pages = [Show(), Show()];
 
   @override
   void initState() {
@@ -48,17 +48,21 @@ class _HomePageState extends State<HomePage>
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: TabBarView(
-        controller: _tabController,
-        children: _pages,
+    return DefaultTabController(
+      length: _pages.length,
+      child: Scaffold(
+        body: TabBarView(
+          controller: _tabController,
+          children: _pages,
+        ),
+        appBar: getAppBar(
+          _tabController,
+          _tabs.map((e) => Tab(text: e)).toList(),
+          context,
+        ),
+        drawer: getDrawer(),
+        drawerEnableOpenDragGesture: false,
       ),
-      appBar: getAppBar(
-        _tabController,
-        _tabs.map((e) => Tab(text: e)).toList(),
-        context,
-      ),
-      drawer: getDrawer(),
     );
   }
 }

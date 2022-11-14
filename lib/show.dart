@@ -7,8 +7,17 @@ class Show extends StatefulWidget {
   State<Show> createState() => _ShowState();
 }
 
-class _ShowState extends State<Show> {
+class _ShowState extends State<Show> with AutomaticKeepAliveClientMixin {
   num n = 0;
+
+  @override
+  bool get wantKeepAlive => true;
+
+  // @override
+  // void initState() {
+  //   super.initState();
+  //   print('recommend initState');
+  // }
 
   @override
   Widget build(BuildContext context) {

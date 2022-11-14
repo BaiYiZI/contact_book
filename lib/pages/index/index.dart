@@ -17,7 +17,7 @@ class IndexPage extends StatefulWidget {
 class _IndexPageState extends State<IndexPage> {
   int _currentPageIndex = 0;
 
-  List _pages = [HomePage(), Show()];
+  List<Widget> _pages = [HomePage(), Show()];
 
   void _changePage(int index) {
     if (index != _currentPageIndex) {
@@ -33,7 +33,10 @@ class _IndexPageState extends State<IndexPage> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        body: _pages[_currentPageIndex],
+        body: IndexedStack(
+          index: _currentPageIndex,
+          children: _pages,
+        ),
         bottomNavigationBar:
             getBottomNavigationBar(_currentPageIndex, _changePage),
       ),
